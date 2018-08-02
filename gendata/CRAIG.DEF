@@ -1,9 +1,9 @@
-******* Workfile: CRAIG.DEF Revision: d16a83761ea9559833940628fc74d78de398acd9 Branch: master
+******* Workfile: <FILE> Revision: <COMMITHASH> Branch: <BRANCH>
 ++MODEL              YCOOPM
 ++DESCRIPTION
       ******************************************************************
       *    FGBC - EDIT PROGRAM FOR <TGBBTRAN>  AND <TGBBDETL>          *
-      *    Change 6                                                    *
+      *    Change 7                                                    *
       *    THIS PROGRAM WILL ALLOW THE ENTRY OR AMENDMENT OF THE       *
       *    THE TRANASACTION HEADER AND THE TRANSACTION DETAIL LINES.   *
       *                                                                *
