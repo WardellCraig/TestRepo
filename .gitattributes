@@ -3,4 +3,4 @@
 
 keywords filter=keywords
 *.DEF filter=keywords
-.git_filters/keywords filter=
+.git_filters/keywords filter=keywords

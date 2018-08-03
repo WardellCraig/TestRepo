@@ -13,6 +13,7 @@ use warnings;
 
 use File::Basename;
 use Getopt::Long;
+use Win32;
 
 ###
 # global config hash
@@ -59,7 +60,7 @@ my $config = {
 ###
 # dump a short usage info to stdout.
 sub usage {
-
+    Win32::MsgBox("Usage.....??");
     print "usage: " . basename($0) . " -m <MODE> -f <FILE>\n";      # SkIp
     print "--mode,-m <MODE>   either \"smudge\" or \"clean\".\n";   # SkIp
     print "--file,-f <FILE>   the file that should be filtered.\n"; # SkIp
@@ -70,7 +71,7 @@ sub usage {
 ###
 # parse the commandline.
 sub parse_commandline {
-
+    Win32::MsgBox("Parse command line");
     my $arg_mode = undef;
     my $arg_file = undef;
 
@@ -82,19 +83,19 @@ sub parse_commandline {
     usage() if ( not $ret );
 
     if ( not defined($arg_mode) ) {
-
+        Win32::MsgBox("error: parameter --mode is mandatory.");
         print "error: parameter --mode is mandatory.\n";
         usage();
     }
 
     if ( not defined($arg_file) ) {
-
+        Win32::MsgBox("error: parameter --file is mandatory.");
         print "error: parameter --file is mandatory.\n";
         usage();
     }
 
     if ( not $arg_mode =~ /(smudge|clean)/i ) {
-
+        Win32::MsgBox("error: --mode must be either smudge or clean");
         print "error: --mode must be either \"smudge\" or \"clean\"";
         usage();
     }
@@ -113,7 +114,7 @@ sub parse_commandline {
 #        ...
 #    }
 sub meta {
-
+    Win32::MsgBox("sub meta");
     my $_keywords = shift; # SkIp
     my $_path     = shift;
 
@@ -127,7 +128,7 @@ sub meta {
 
     my $branch =  `git branch | awk '/\\*/ {print \$2}'`;
     chomp( $branch );
-
+    Win32::MsgBox("chomp");
     $meta->{BRANCH} = $branch;
 
     my $log = `git log -g -n 1 --pretty="$format" "$branch" -- "$_path" 2>/dev/null`;
@@ -135,7 +136,7 @@ sub meta {
 
     foreach my $entry ( split( /\n/, $log ) ) {
 
-        
+        Win32::MsgBox("In loop");
         my ( $k, $v ) = ( $1, $2 ) if ( $entry =~ /\s*([^=][^=]*)=(.*)/ );
 
         chomp( $k ) if ( defined ( $k ) );
@@ -161,7 +162,7 @@ sub meta {
 # $_prefix - the left delimter string
 # <- the history string
 sub history {
-
+    Win32::MsgBox("In sub_history");
     my $_path   = shift;
     my $_args   = shift;
     my $_max    = shift;
@@ -186,7 +187,7 @@ sub history {
 # $_str  - the string to be substitued
 # <- the substituted string
 sub subst {
-
+    Win32::MsgBox("In subst");
     my $_meta = shift;
     my $_str  = shift;
 
@@ -206,7 +207,7 @@ sub subst {
 # $_curr - the cleaned string (current commit)
 # <- the smudged string
 sub smudge {
-
+    Win32::MsgBox("In smudge");
     my $_keywords = shift; # SkIp
     my $_path     = shift;
     my $_curr     = shift;
@@ -240,7 +241,7 @@ sub smudge {
 # $_curr     - the uncleaned string (current commit)
 # <- the cleaned string
 sub clean {
-
+    Win32::MsgBox("In clean");
     my $_keywords = shift; # SkIp
     my $_path     = shift;
     my $_prev     = shift;
@@ -291,7 +292,7 @@ sub clean {
 ###
 # main()
 sub main {
-
+    Win32::MsgBox("In main");
     parse_commandline();
 
     my $curr = undef;
@@ -314,6 +315,7 @@ sub main {
 
         print clean( $config->{KEYWORDS}, $config->{file}, $prev, $curr ); 
     }
+	Win32::MsgBox("All done");
 }
 
 main();
