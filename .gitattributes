@@ -1,6 +1,5 @@
 # .gitattributes
 # Map file extensions to git filters
-
-keywords filter=keywords
-*.DEF filter=keywords
-.git_filters/keywords filter=
+*.DEF   filter=rcs-keywords
+*.MOD   filter=rcs-keywords
+*.CPY   filter=rcs-keywords
