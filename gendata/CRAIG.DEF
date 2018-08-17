@@ -1,9 +1,9 @@
-******* $Workfile: <FILE>$ $Revision: <COMMITHASH>$
+******* $Workfile: CRAIG.DEF$ $Revision: <COMMITHASH>$
 ++MODEL              YCOOPM
 ++DESCRIPTION
       ******************************************************************
       *    FGBC - EDIT PROGRAM FOR <TGBBTRAN>  AND <TGBBDETL>          *
-      *    Change 11                                                   *
+      *    Change 12                                                   *
       *    THIS PROGRAM WILL ALLOW THE ENTRY OR AMENDMENT OF THE       *
       *    THE TRANASACTION HEADER AND THE TRANSACTION DETAIL LINES.   *
       *                                                                *
