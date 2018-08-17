@@ -1,9 +1,9 @@
-******* Workfile: $File$ Revision: $Revision$
+******* Workfile: <FILE> Revision: <COMMITHASH> Branch: <BRANCH>
 ++MODEL              YCOOPM
 ++DESCRIPTION
       ******************************************************************
       *    FGBC - EDIT PROGRAM FOR <TGBBTRAN>  AND <TGBBDETL>          *
-      *    Change 36                                                   *
+      *    Change 37                                                   *
       *    THIS PROGRAM WILL ALLOW THE ENTRY OR AMENDMENT OF THE       *
       *    THE TRANASACTION HEADER AND THE TRANSACTION DETAIL LINES.   *
       *                                                                *
