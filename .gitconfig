@@ -1,0 +1,3 @@
+[filter "keywords"]
+  clean = filter.keywords.clean 'perl -pe "s/\\\$Revision:[^\\\$]*\\\$/\\\$Revision: <COMMITHASH>\\\$/"'
+  smudge = filter.keywords.smudge ".git_filters/keywords -m smudge -f %f"
